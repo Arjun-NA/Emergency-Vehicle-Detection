@@ -22,18 +22,10 @@ void initADC(void)
 {
 	SIM_SCGC6 |= SIM_SCGC6_ADC0_MASK;
 	ADC0_CFG1 |= ADC_CFG1_MODE(3); //16 bit single-ended
-	//ADC0_CFG1 |= ADC_CFG1_ADIV(1);
 	ADC0_SC1A |= ADC_SC1_ADCH(0); 
 	
 	SIM_SCGC3 |= SIM_SCGC3_ADC1_MASK;
 	ADC1_CFG1 |= ADC_CFG1_MODE(3); //16 bit single-ended
-	//ADC1_CFG1 |= ADC_CFG1_ADIV(1);
 	ADC1_SC1A |= ADC_SC1_ADCH(0); 
 	
-	//set clock frequency
-	//ADC0_CFG2 |= ADC_CFG2_ADHSC(4); //high speed conversion
-	//ADC0_CFG1 = ADC_CFG1_ADLSMP(0); //short sample time
-	
-	//ADC1_CFG2 |= ADC_CFG2_ADHSC(4); //high speed conversion
-	//ADC0_CFG1 = ADC_CFG1_ADLSMP(0);	//short sample time
 }
