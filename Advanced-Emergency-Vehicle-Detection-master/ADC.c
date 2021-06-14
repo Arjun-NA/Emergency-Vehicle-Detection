@@ -46,13 +46,5 @@ void initADC(void)
 	ADC1_CFG2 |= ADC_CFG2_ADHSC(1);   	// high speed conversion
 	ADC0_CFG2 |= ADC_CFG2_MUXSEL(0);   	// ADC Mux Select channel A
 	ADC1_CFG2 |= ADC_CFG2_MUXSEL(0);   	// ADC Mux Select channel A
-
-	SIM_SCGC6 |= SIM_SCGC6_ADC0_MASK;
-	ADC0_CFG1 |= ADC_CFG1_MODE(3); //16 bit single-ended
-	ADC0_SC1A |= ADC_SC1_ADCH(0); 
-	
-	SIM_SCGC3 |= SIM_SCGC3_ADC1_MASK;
-	ADC1_CFG1 |= ADC_CFG1_MODE(3); //16 bit single-ended
-	ADC1_SC1A |= ADC_SC1_ADCH(0); 
 	
 }
