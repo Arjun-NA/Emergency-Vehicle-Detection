@@ -132,12 +132,12 @@ void AudioAcquire(float32_t* mic0, float32_t * mic1)
 		ADC0_SC1A = 0 & ADC_SC1_ADCH_MASK;			
 		while(ADC0_SC2 & ADC_SC2_ADACT_MASK);
 		while(!(ADC0_SC1A & ADC_SC1_COCO_MASK));
-		mic0[i] = (((float32_t)ADC0_RA)/1000);
+		mic0[i] = (((float32_t)ADC0_RA)/20);
 
 		ADC1_SC1A = 0 & ADC_SC1_ADCH_MASK;
 		while(ADC1_SC2 & ADC_SC2_ADACT_MASK);
 	 	while(!(ADC1_SC1A & ADC_SC1_COCO_MASK));
-		mic1[i] = (((float32_t)ADC1_RA)/1000);
+		mic1[i] = (((float32_t)ADC1_RA)/20);
     }
     arm_fir_f32(&S, mic0, mic0, block_size);		
     arm_fir_f32(&S, mic1, mic1, block_size);
